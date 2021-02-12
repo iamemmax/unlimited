@@ -69,3 +69,7 @@ body{
     color: rgb(6, 6, 158);
     transition: all .5s ease;
 }
+.fixedTag{
+    position: fixed !important;
+    top: 4rem;
+}

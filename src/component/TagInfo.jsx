@@ -4,17 +4,27 @@ import {Link} from 'react-router-dom'
 
 function TagInfo() {
 const [tag, setTags] = useState('')
+const [imgTag, setImgTag] = useState(false)
 let tags = (e) =>{
     e.preventDefault()
     const inputTag = e.target.getAttribute('data-target');
     setTags(inputTag)
 
 }
+const fixedTagOnStroll = () =>{
+    if(window.pageYOffset > 100){
+        setImgTag(true)
+    }else{
+        setImgTag(false)
+
+    }
+}
+
+window.addEventListener("scroll", fixedTagOnStroll)
 
     return (
         <>
-            <div className="tags" >
-                    <form onClick={tags}>
+            <div className={imgTag ? "tags fixedTag" : "tags"} onClick={tags} >
                          <Link to={`${tag}`}>  <span data-target="nature">Nature</span>
                                 <span data-target="wallpaper">Wallpapers</span>
                                 <span data-target="people">People</span>
@@ -29,9 +39,8 @@ let tags = (e) =>{
                                 <span data-target="current event">current event</span> 
                                 <span data-target="interior">interior</span> 
                                 <span data-target="history">history</span> 
-                                <span data-target="currency">currency</span> 
+                                {/* <span data-target="currency">currency</span>  */}
                          </Link> 
-                    </form>
                 </div>
         </>
     )

@@ -92,6 +92,8 @@
         width: 220px;
         left: 0;
         transform: translate(-100%);
+        transition: transform .5s ease;
+
         z-index: 9999 !important;
         
     }
@@ -101,6 +103,28 @@
     }
     .showToggle{
         transform: translate(0) !important;
+        transition: transform .5s ease;
+
     }
 
 }
+   .header-nav{
+        position: sticky;
+        top: 0;
+        background-color: #fff !important;
+        height: 10vh;
+        transition: transform .5s ease;
+    }
+    .header-nav .logo a{
+        color: #222;
+    }
+
+    .header-nav .navlink a{
+        color: #222;
+    }
+    
+    @media screen and (max-width:768px){
+        .header-nav .navlink a{
+            color: #fff;
+        }
+    }

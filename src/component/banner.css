@@ -54,15 +54,30 @@
     outline: none;
     background-color: unset;
     cursor: pointer;
-    
-
+ 
 }
+
 .banner-wrapper button i{
    position: absolute;
-   /* right: 1rem; */
    margin-left: -5rem;
    font-size: 25px;
    margin-top: -15px;
-    
 
 }
+
+
+.inputOnStroll input{
+    width:500px !important;
+    /* border: 2px solid red; */
+    background-color: #eee;
+    position: fixed !important;
+    top: 12px;
+    left: 30%;
+    transform:  translateY(-50%);
+    z-index: 9999;
+    border-radius: 30px;
+}
+.inputOnStroll  h2{
+   display: none !important;
+}
+
