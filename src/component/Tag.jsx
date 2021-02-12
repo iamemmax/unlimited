@@ -1,37 +1,45 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom'
+import DisplayImg from "../component/DisplayImg"
+import "../component/home.css"
+import Banner from "../component/Banner"
+import TagInfo from "../component/TagInfo"
 
 
-const Tag = () => {
 
-const [tag, setTags] = useState('')
-let tags = (e) =>{
+const Tag = ({match}) => {
+const accessKey = process.env.accessKey || "nMXzCXR6ruc3Nz9gx43xYl_FEteUcl9jGXo_lV7_xic"
+
+const [myImg, setImg] = useState([])
+const [input, setInput] = useState('rice')
+
+
   
-    
-   const inputTag = e.target.getAttribute('data-target');
-   setTags(inputTag)
-//    console.log(tag);
+useEffect(() => {
+    response()
+    console.log(match);
+}, []);
+
+const response =  async () =>{
+    const getImg =  await fetch(`https://api.unsplash.com/search/photos?query=${match.params.id}&client_id=${accessKey}&per_page=400`)
+    const data =  await getImg.json()
+    console.log(data.results);
+    setImg(data.results)
+
 }
+
+
+
   
 
     return (
         <div>
-            <div className="tags"onClick={tags} >
-                
-                         <Link to={`/${tag}`}>  
-                                <span data-target="nature">Nature</span>
-                                <span data-target="wallpaper">Wallpapers</span>
-                                <span data-target="people">People</span>
-                                <span data-target="fashion">Fashion</span>
-                                <span data-target="health"> Health</span>
-                                <span data-target="business & work">Business & work</span>
-                                <span  data-target="travel">Travel</span>
-                                <span data-target="technology">Technology</span>
-                                <span data-target="animal">Animal</span>
-                                <span data-target="developer">developer</span>
-                                <span data-target="food & drink">Food & drink</span>
-                         </Link> 
-                   
+            <Banner />
+            <TagInfo />
+
+            <div className="img-container">
+                        {myImg.map(data => <DisplayImg img={data.urls.small} key={data.id} />)}
+                        
                 </div>
         </div>
     );

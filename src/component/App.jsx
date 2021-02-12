@@ -23,7 +23,7 @@ const App = () => {
               <Route path="/about" component={About}/>
               <Route path="/contact" component={Contact}/>
               <Route path="/upload" component={Upload}/>
-              {/* <Route path="/t/:id" component={Tag}/> */}
+              <Route path="/:id" exact component={Tag}/>
             </Switch>
         
       </Router>

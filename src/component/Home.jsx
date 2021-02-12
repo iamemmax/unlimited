@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import Axios from "axios"
+// import Axios from "axios"
 import DisplayImg from "../component/DisplayImg"
 import Banner from "../component/Banner"
-import Tag from "../component/Tag"
+import TagInfo from "../component/TagInfo"
 import "../component/home.css"
 import {Link} from 'react-router-dom'
 
@@ -25,7 +25,7 @@ const handleForm =(e) =>{
 }
 
 const HandleInput =(e) =>{
-  const input = document.getElementById("input").value
+    const input = document.getElementById("input").value
   
   setInput(input);
   console.log(input);
@@ -44,14 +44,13 @@ const HandleInput =(e) =>{
 
  }
 
-//  const response = await fetch(``)
-
 
 
     return (
         <div>
             <Banner handleForm={handleForm}  HandleInput={HandleInput}  />
-                 <Tag/>
+            <TagInfo />
+            
                 <div className="img-container">
                         {myImg.map(data => <DisplayImg img={data.urls.small} key={data.id} />)}
                         

@@ -45,6 +45,7 @@ body{
     height: 60px;
     background: #eee;
     box-shadow: 0px 0px 1px 3px #fff;
+    text-align: center;
    
 }
 .tags span{
@@ -52,10 +53,17 @@ body{
     padding: 10px;
     font-weight: 900;
     font-size: 14px;
-    margin: 5px;
+    margin: 3px;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
+    transition: all .5s ease;
 
+}
+.tags a{
+    text-decoration: none;
 }
 .tags span:hover{
     color: rgb(6, 6, 158);
