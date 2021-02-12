@@ -6,6 +6,7 @@ import About from "../component/About"
 import Banner from "../component/Banner"
 import Contact from "../component/Contact"
 import Upload from "../component/Upload"
+import Tag from "../component/Tag"
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
@@ -22,6 +23,7 @@ const App = () => {
               <Route path="/about" component={About}/>
               <Route path="/contact" component={Contact}/>
               <Route path="/upload" component={Upload}/>
+              {/* <Route path="/t/:id" component={Tag}/> */}
             </Switch>
         
       </Router>

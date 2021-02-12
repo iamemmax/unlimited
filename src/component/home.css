@@ -39,7 +39,7 @@ body{
     top: 52%;
     justify-content: space-around;
     align-items: center;
-    z-index: 9999;
+    z-index: 99;
     width: 100%;
     padding: 10px;
     height: 60px;
@@ -50,9 +50,9 @@ body{
 .tags span{
     color: #222;
     padding: 10px;
-    font-weight: 800;
-    font-size: 16px;
-    margin: 5px 10px;
+    font-weight: 900;
+    font-size: 14px;
+    margin: 5px;
     border-radius: 5px;
     cursor: pointer;
 

@@ -92,6 +92,7 @@
         width: 220px;
         left: 0;
         transform: translate(-100%);
+        z-index: 9999 !important;
         
     }
     .header .navlink a{

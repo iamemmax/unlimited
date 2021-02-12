@@ -4,13 +4,12 @@ import "../component/navbar.css"
 
 const Navbar = () => {
 
-    const [toggle, setToggle] = useState("")
-    const ul = document.querySelector("ul")
-    const bar = document.querySelector("#bar")
+    const [toggle, setToggle] = useState(false)
+    const toggleNav = () => setToggle(!toggle)
+    const closeNav = () => setToggle(false)
+   
 
-    const toggleNav = () =>{
-        setToggle(bar)
-    }
+    
 
     
     return (
@@ -18,14 +17,16 @@ const Navbar = () => {
             <nav  className="header" id="nav">
                 <div className="logo">
               <Link to="/" >  <h1> EmmaxImg</h1></Link>
+
+
                 </div>
-                    <ul className="navlink" >
-                        <Link to="/" ><li className="active">Home</li></Link>
-                        <Link to="/about" > <li>About</li> </Link>
-                        <Link to="/contact" ><li>Contact</li></Link>
-                        <Link to="/upload" ><li>upload</li></Link>
+                    <ul className={toggle ? "navlink showToggle" :  "navlink"}>
+                        <Link to="/" ><li className="active" onClick="closeNav()">Home</li></Link>
+                        <Link to="/about" > <li onClick="closeNav()">About</li> </Link>
+                        <Link to="/contact" ><li onClick="closeNav()">Contact</li></Link>
+                        <Link to="/upload" ><li onClick="closeNav()">upload</li></Link>
                     </ul>
-                    <div className="bar" id={toggle ? ul.classList.toggle("showToggle") : ""} onClick={toggleNav}>
+                    <div className="bar"  onClick={toggleNav}>
                         <div className="bar1"></div> 
                         <div className="bar1"></div>
                         <div className="bar1"></div>
