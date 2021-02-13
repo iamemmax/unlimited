@@ -28,13 +28,10 @@ const DisplayImg = ({img, userImg, name, likes, download}) => {
                 </div> */}
             </div>
                 <div className="download">
-                    <form action="" onClick={handeleForm}>
+                    <form action="" onSubmit={handeleForm}>
                     <button type="submit">    
-                   <li> <Link to={`/unsplash.com/photos/${download}/download?force=true`}>
-               <i className="fas fa-download"></i>
-                    </Link></li>
-                   <li>
-          </li>
+                 
+                <button><Link to={`/unsplash.com/photos/${download}/download?force=true`}> bb</Link></button>
                     </button>
                     </form>
 
