@@ -29,8 +29,9 @@ body{
 
 }
 .img-container .img img:hover{
-    opacity: .8;
+    opacity: .5;
     transition: all .5s ease;
+    background-color: #222 !important;
 }
 
 .tags{
@@ -72,4 +73,61 @@ body{
 .fixedTag{
     position: fixed !important;
     top: 4rem;
+}
+
+
+.img-box{
+    position: relative;
+    width: 100%;
+}
+.userInfo{
+    display: flex;
+    background-color: rgba(197, 197, 197, 0.459);
+    position: absolute;
+    align-items: center;
+    bottom: 1rem;
+    width: 70%;
+    justify-content: space-between;
+    padding: 10px;
+    transform: scale(0);
+}
+.userInfo .userImg{
+    /* border: 2px solid red; */
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.userImg img{
+    width: 100%;
+}
+
+.userText{
+    display: flex;
+    /* border: 2px solid red; */
+    width: 220px;
+    padding: 10px;
+    justify-content: space-around;
+    margin-left: -2rem;
+}
+.userText p, span{
+    font-weight: 500;
+    color: #222;
+}
+.download{
+    padding: 10px;
+    right: 2rem;
+    transform: scale(1) !important;
+    position: absolute;
+    align-items: center;
+    bottom: 1rem;
+}
+.download i{
+    color: #f00;
+}
+.img-container .img:hover ~ .userInfo{
+    transform: scale(1);
 }

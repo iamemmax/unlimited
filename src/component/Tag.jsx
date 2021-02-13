@@ -38,7 +38,9 @@ const response =  async () =>{
             <TagInfo />
 
             <div className="img-container">
-                        {myImg.map(data => <DisplayImg img={data.urls.small} key={data.id} />)}
+            {myImg.map(data => <DisplayImg img={data.urls.small} userImg={data.user.profile_image.small} key={data.id} name={data.user.username} likes={data.likes} download={data.id}/>)}
+                        
+
                         
                 </div>
         </div>
