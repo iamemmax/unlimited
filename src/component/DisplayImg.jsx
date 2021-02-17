@@ -21,7 +21,7 @@ const DisplayImg = ({img, userImg, name, likes, download}) => {
                 </div>
                 <div className="userText">
                     <p>{name}</p>
-                <span> <i className="fa fa-thumbs-up"></i> {likes}</span>
+                <span> <i className="fa fa-thumbs-up"></i> {likes} likes</span>
                 </div>
 
                 {/* <div className="likes">
@@ -31,7 +31,7 @@ const DisplayImg = ({img, userImg, name, likes, download}) => {
                     <form action="" onSubmit={handeleForm}>
                     <button type="submit">    
                  
-                <button><Link to={`/unsplash.com/photos/${download}/download?force=true`}> bb</Link></button>
+                <button><Link to={`unsplash.com/photos/${download}/download?force=true`}> <i className="fa fa-download"></i></Link></button>
                     </button>
                     </form>
 

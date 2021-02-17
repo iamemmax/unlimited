@@ -9,21 +9,22 @@ body{
     align-items: center;
     flex-flow: column wrap;
     width: 90%;
-    max-height: 4100px;
+    max-height: 1000px;
     margin: 0px auto;
-    /* border: 2px solid red; */
-    overflow: hidden;
+    border: 2px solid red;
+    /* overflow: hidden; */
 
 }
 
 
 .img-container > div{
-    width: 33.33%;
+    width: 32%;
     margin: 5px;
-
+    border: 2px solid red;
+    
 }
 .img-container  .img img{
-    /* border: 2px solid red; */
+    border: 2px solid red;
     width: 100%;
     cursor: pointer;
 
@@ -130,4 +131,50 @@ body{
 }
 .img-container .img:hover ~ .userInfo{
     transform: scale(1);
+}
+
+/* loadmore */
+.loadmore button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #222;
+    color: #eee;
+    font-size: 18px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+.loadmore{
+    padding: 20px;
+}
+
+
+.realInfo{
+    /* border: 2px solid red; */
+    padding: 10px;
+    position: absolute;
+    top: 44%;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+.realInfo div{
+    margin: 5px;
+   
+}
+
+.loading{
+    /* border: 2px solid red; */
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loadmore p{
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 600;
 }

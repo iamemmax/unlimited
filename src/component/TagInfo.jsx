@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom'
 
 
 function TagInfo() {
-const [tag, setTags] = useState('')
+const [tag, setTags] = useState([])
 const [imgTag, setImgTag] = useState(false)
+
 let tags = (e) =>{
     e.preventDefault()
     const inputTag = e.target.getAttribute('data-target');
@@ -23,7 +24,9 @@ const fixedTagOnStroll = () =>{
 window.addEventListener("scroll", fixedTagOnStroll)
 
     return (
+
         <>
+                   
             <div className={imgTag ? "tags fixedTag" : "tags"} onClick={tags} >
                          <Link to={`${tag}`}>  <span data-target="nature">Nature</span>
                                 <span data-target="wallpaper">Wallpapers</span>
