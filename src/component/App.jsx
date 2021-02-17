@@ -7,6 +7,7 @@ import Banner from "../component/Banner"
 import Contact from "../component/Contact"
 import Upload from "../component/Upload"
 import Tag from "../component/Tag"
+import SingleImg from "../component/SingleImg"
 
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
@@ -24,6 +25,7 @@ const App = () => {
               <Route path="/contact" component={Contact}/>
               <Route path="/upload" component={Upload}/>
               <Route path="/:id" exact component={Tag}/>
+              <Route path="/s/:id" exact component={SingleImg}/>
             </Switch>
         
       </Router>

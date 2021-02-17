@@ -49,7 +49,6 @@ const handleColor = (e) =>{
 
 useEffect(() => {
     response()
-    // console.log(match);
 }, [Color, orientation, order, sort, loadmore]);
 
 const response =  async () =>{
@@ -120,11 +119,10 @@ const response =  async () =>{
             <TagInfo />
 
             <div className="img-container">
-            {myImg.map(data => <DisplayImg img={data.urls.small} userImg={data.user.profile_image.small} key={data.id} name={data.user.username} likes={data.likes} download={data.id}/>)}
+                        {myImg.map(data => <DisplayImg img={data.urls.small} userImg={data.user.profile_image.small} key={data.id} name={data.user.username} likes={data.likes} download={data.id} id={data.id}/>)}
                         
-
-                        
-                </div>
+           
+        </div>
                 
         </div>
     );

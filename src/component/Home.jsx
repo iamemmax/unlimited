@@ -148,7 +148,7 @@ const handleColor = (e) =>{
                {loading && <p>Loading ......</p>}
             </div>
                 <div className="img-container">
-                        {myImg.map(data => <DisplayImg img={data.urls.small} userImg={data.user.profile_image.small} key={data.id} name={data.user.username} likes={data.likes} download={data.id}/>)}
+                        {myImg.map(data => <DisplayImg img={data.urls.small} userImg={data.user.profile_image.small} key={data.id} name={data.user.username} likes={data.likes} download={data.id} id={data.id}/>)}
                         
            
         </div>

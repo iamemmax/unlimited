@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 
 
-const DisplayImg = ({img, userImg, name, likes, download}) => {
+const DisplayImg = ({img, userImg, name, likes, download, id}) => {
     const handeleForm = (e) =>{
         e.preventDefault()
     }
@@ -12,7 +12,9 @@ const DisplayImg = ({img, userImg, name, likes, download}) => {
             // <Router>
         <div className="img-box">
             <div className="img">
+                <Link to={`/s/${id}`}>
                 <img src={img}  alt=""/>
+                </Link>
             </div>
             
             <div className="userInfo">
@@ -20,23 +22,15 @@ const DisplayImg = ({img, userImg, name, likes, download}) => {
                     <img src={userImg} alt=""/>
                 </div>
                 <div className="userText">
-                    <p>{name}</p>
-                <span> <i className="fa fa-thumbs-up"></i> {likes} likes</span>
+                    <p>{name.substr(0,10)}</p>
+                <span> <i className="fa fa-thumbs-up"></i> {likes} </span>
                 </div>
-
-                {/* <div className="likes">
-                </div> */}
-            </div>
+                
                 <div className="download">
-                    <form action="" onSubmit={handeleForm}>
-                    <button type="submit">    
-                 
-                <button><Link to={`unsplash.com/photos/${download}/download?force=true`}> <i className="fa fa-download"></i></Link></button>
-                    </button>
-                    </form>
-
-
+                    
+             <a rel="nofollow" href={`https://unsplash.com/photos/${download}/download?force=true&w=2400`} target="_blank"> <i className="fa fa-download"></i> </a>
               </div>
+            </div>
       
 
     
