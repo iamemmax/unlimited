@@ -195,3 +195,68 @@ body{
 .download{
     display: flex;
 }
+
+.realInfo{
+    /* border: 2px solid red; */
+}
+.realInfo select{
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    width: 100px;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+@media screen and (max-width:768px){
+
+    .img-container{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column wrap;
+        width: 90%;
+        max-height: 2000px;
+        margin: 0px auto;
+       
+    
+    }
+    
+    
+    .img-container > div{
+        width: 50%;
+        margin: 5px;
+        /* border: 2px solid red; */
+        
+    }
+    .img-container  .img img{
+        /* border: 2px solid red; */
+        width: 100%;
+        cursor: pointer;
+    
+    }
+    .realInfo{
+        position: absolute;
+        top: 38%;
+        /* z-index: 999; */
+    }
+    .realInfo select{
+        cursor: pointer;
+    }
+    .realInfo option{
+        padding: 10px;
+    }
+
+
+    .tags{
+    
+        justify-content: space-around;
+    
+        padding: 15px;
+        height: 80px;
+        line-height: 25px;
+       
+       
+    }
+}

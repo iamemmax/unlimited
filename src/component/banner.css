@@ -81,3 +81,56 @@
    display: none !important;
 }
 
+
+@media screen and (max-width:768px){
+    .banner-wrapper h2{
+        font-weight: 500;
+        font-size: 16px;
+        text-align: center;
+        padding-bottom: 0;
+      
+    }
+    
+
+
+    .banner-wrapper .search{
+        position: relative;
+        width: 100%;
+       
+    }
+    .banner-wrapper input{
+        width:450px;
+        border-radius: 20px;
+        margin-top: 10px;
+        height: 40px;
+        padding: 10px 40px;
+        
+    }
+    
+    
+    .banner-wrapper button i{
+       position: absolute;
+       margin-left: -3rem;
+       font-size: 20px;
+       margin-top: -12px;
+    
+    }
+    
+    .inputOnStroll input{
+        width:250px !important;
+        top: 19px;
+        left: 32%;
+        transform:  translateY(-50%);
+        z-index: 9999;
+        border-radius: 20px;
+
+    }
+    
+    .center{
+        /* border: 2px solid red; */
+        position: absolute;
+        top: 30%;
+        padding: 10px;
+    }
+    
+}

@@ -18,6 +18,7 @@ const Banner = ({handleForm, HandleInput}) => {
     
     return (
         <div className={bannerInput ? 'banner-wrapper inputOnStroll' : "banner-wrapper"}>
+            <div className="center">
        <h2>Search from our unlimited image gallery </h2>
         <div className="search ">
        <form  onSubmit={handleForm}>
@@ -27,6 +28,7 @@ const Banner = ({handleForm, HandleInput}) => {
                 
        </form>
       
+       </div>
        </div>
      </div>
 

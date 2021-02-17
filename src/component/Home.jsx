@@ -15,9 +15,9 @@ const Home = ({match}) => {
  const SecretKey = process.env.accessKey || "ygXaq3eg3RucAlFc7OH2pDYezpCIEzItX0c0_C9LPa0"
  const OAuth  = process.env.accessKey || "lNqDoGZyA8DSBFKEfc_1XFrL5sNV5d5Pw2V9N1-2ye0"
  
-
+const nature = ["nature", "people", "food", "office" ]
 const [myImg, setImg] = useState([])
-const [input, setInput] = useState('rice')
+const [input, setInput] = useState(nature)
 const [query, setQuery] = useState("")
 // const [loadmore, setLoadmore] = useState(15)
 const [page, setPage] = useState(1)
@@ -30,6 +30,7 @@ const [Color, setColor] = useState("black")
 const handleForm =(e) =>{
   e.preventDefault()
   setQuery(input)
+    
 
 }
 
@@ -49,9 +50,10 @@ window.onscroll = function(){
 }
 
 
-const HandleInput =(e) =>{
+const HandleInput = (e) =>{
     const input = document.getElementById("input").value
   setInput(input);
+
   setPageLoading(true)
 
 }
@@ -79,10 +81,13 @@ const handleColor = (e) =>{
     }, [query, sort, order, orientation, Color, page]);
 
  const response =  async () =>{
-     const getImg =  await fetch(`https://api.unsplash.com/search/photos?query=${input}&secret=${SecretKey}&per_page=200&client_id=${accessKey}&per_page=100&sort_by=${sort}&order_by=${order}&orientation=${orientation}&color=${Color}&page=${page}`)
-     const data =  await getImg.json()
-    //  console.log(data.results);
-     setImg(data.results)
+
+
+        const getImg =  await fetch(`https://api.unsplash.com/search/photos?query=${input}&secret=${SecretKey}&per_page=200&client_id=${accessKey}&per_page=100&sort_by=${sort}&order_by=${order}&orientation=${orientation}&color=${Color}&page=${page}`)
+        const data =  await getImg.json()
+        //  console.log(data.results);
+        setImg(data.results)
+    
 
  }
 
@@ -125,12 +130,12 @@ const handleColor = (e) =>{
                     {/* color */}
                     <div className="orderBy" onChange={handleColor}>
                         <select id="">
-                        <option value="black_and_white">black_and_white</option>
                         <option default disabled>Color</option>
                         <option value="black">black</option>
                         <option value="yellow">yellow</option>
                         <option value="white">white</option>
                         <option value="orange">orange</option>
+                        <option value="black_and_white">black_and_white</option>
                         <option value="red">red</option>
                         <option value="purple">purple</option>
                         <option value="magenta">magenta</option>

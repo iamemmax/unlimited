@@ -127,4 +127,10 @@
         .header-nav .navlink a{
             color: #fff;
         }
+        .header .logo a{
+            font-weight: 400;
+            font-family: 'Lobster', cursive;
+            font-size: 16px;
+        
+        }
     }
