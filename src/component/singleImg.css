@@ -1,0 +1,43 @@
+.download-box{
+    display: inline-block;
+    position: absolute;
+    top: 70%;
+    right: 5rem;
+    width: 200px;
+    padding: 10px;
+}
+.download-box p{
+    font-weight: 500;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+}
+
+.download-box .downloadForm{
+    transform: scale(0);
+    transition: transform .5s ease;
+}
+.showDownload{
+    transform: scale(1) !important;
+    transition: transform .5s ease;
+}
+.download-box button, a{
+    /* display: block; */
+
+    padding: 8px;
+    width: 100%;
+    color: #222;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: left;
+}
+.download-box a:hover{
+    color: blue;
+}
