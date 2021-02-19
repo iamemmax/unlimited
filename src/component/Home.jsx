@@ -29,6 +29,7 @@ const [Color, setColor] = useState("black")
   
 const handleForm =(e) =>{
   e.preventDefault()
+//   setPageLoading(true)
   setQuery(input)
     
 
@@ -37,7 +38,6 @@ const handleForm =(e) =>{
 // pagination
 
 const loadmore = (e) =>{
-    // setPageLoading(true)
     setPage(page+1)
 }
 window.onscroll = function(){
@@ -49,12 +49,15 @@ window.onscroll = function(){
     }
 }
 
+const handleLoad = ()=>{
+    setPageLoading(true)
+    console.log(loading);
+}
 
 const HandleInput = (e) =>{
     const input = document.getElementById("input").value
   setInput(input);
 
-  setPageLoading(true)
 
 }
 
@@ -74,9 +77,14 @@ const handleOrientation = (e) =>{
 const handleColor = (e) =>{
     setColor(e.target.value)
 }
+// pageloader
+
+
+
   useEffect(() => {
-        response()
-        setPageLoading(false)
+      response()
+      setPageLoading(false)
+     
         // console.log(match);
     }, [query, sort, order, orientation, Color, page]);
 
@@ -149,8 +157,8 @@ const handleColor = (e) =>{
                 </div>
             <TagInfo />
             
-            <div className="loading">
-               {loading && <p>Loading ......</p>}
+            <div className={loading ? "removeLoader" : "loader"} onLoad={handleLoad}>
+                <div className="preloader"></div>
             </div>
                 <div className="img-container">
                         {myImg.map(data => <DisplayImg img={data.urls.small} userImg={data.user.profile_image.small} key={data.id} name={data.user.username} likes={data.likes} download={data.id} id={data.id}/>)}
